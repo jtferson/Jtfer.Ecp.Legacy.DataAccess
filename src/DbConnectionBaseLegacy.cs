@@ -33,17 +33,17 @@ namespace Jtfer.Ecp.Legacy.DataAccess
 
         protected abstract string GetDbPath(string dbVersion);
 
-        public abstract IEnumerable<T> Get<T>() where T : DbObjectLegacy;
-        public abstract IEnumerable<T> Get<T>(Expression<Func<T, bool>> query) where T : DbObjectLegacy;
-        public abstract void Insert<T>(T dto) where T : DbObjectLegacy;
-        public abstract void Update<T>(IEnumerable<T> dtos) where T : DbObjectLegacy;
-        public abstract bool Update<T>(T dto) where T : DbObjectLegacy;
-        public abstract bool Upsert<T>(T dto) where T : DbObjectLegacy;
-        public abstract bool Delete<T>(int id) where T : DbObjectLegacy;
-        public abstract void DeleteAll<T>() where T : DbObjectLegacy;
+        public abstract IEnumerable<T> Get<T>() where T : DbObjectLegacy, new();
+        public abstract IEnumerable<T> Get<T>(Expression<Func<T, bool>> query) where T : DbObjectLegacy, new();
+        public abstract void Insert<T>(T dto) where T : DbObjectLegacy, new();
+        public abstract void Update<T>(IEnumerable<T> dtos) where T : DbObjectLegacy, new();
+        public abstract bool Update<T>(T dto) where T : DbObjectLegacy, new();
+        public abstract bool Upsert<T>(T dto) where T : DbObjectLegacy, new();
+        public abstract bool Delete<T>(int id) where T : DbObjectLegacy, new();
+        public abstract void DeleteAll<T>() where T : DbObjectLegacy, new();
         public abstract void RunInTransaction(Action transaction);
         public abstract IEnumerable<Type> GetMappedTypes();
-        public abstract void MapEntityToTable<T>() where T : DbObjectLegacy;
+        public abstract void MapEntityToTable<T>() where T : DbObjectLegacy, new();
 
     }
 }
