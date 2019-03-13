@@ -10,6 +10,7 @@ namespace Jtfer.Ecp.Legacy.DataAccess
     {
         private Queue<Action> _transactions = new Queue<Action>();
         protected abstract string DatabaseName { get; }
+        protected abstract string FileFormat { get; }
         protected string DbPath { get; private set; }
 
         public void Initialize(string dbVersion)
