@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Jtfer.Ecp.Legacy.DataAccess
@@ -16,7 +17,7 @@ namespace Jtfer.Ecp.Legacy.DataAccess
             var dbRouter = AddContainer<DbRouterLegacy>();
             AddContainer<DataGatewayLegacy>();
             var providers = DefineDbConnections();
-            dbRouter.SetProviders(providers);
+            dbRouter.SetProviders(providers.ToArray());
         }
 
         public abstract IEnumerable<DbConnectionBaseLegacy> DefineDbConnections();
