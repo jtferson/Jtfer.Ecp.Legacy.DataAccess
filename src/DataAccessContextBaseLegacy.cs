@@ -16,7 +16,7 @@ namespace Jtfer.Ecp.Legacy.DataAccess
             var dbRouter = AddContainer<DbRouterLegacy>();
             AddContainer<DataGatewayLegacy>();
             var providers = DefineDbConnections();
-            dbRouter.SetProviders();
+            dbRouter.SetProviders(providers);
         }
 
         public abstract IEnumerable<DbConnectionBaseLegacy> DefineDbConnections();

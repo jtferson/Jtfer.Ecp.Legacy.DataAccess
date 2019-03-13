@@ -239,6 +239,10 @@ namespace Jtfer.Ecp.Legacy.DataAccess
                     .ToDictionary(q => q.type, q => q.prov);
             }
 #if DEBUG
+            if (providers.Length == 0)
+            {
+                throw new Exception("Provider count is 0");
+            }
             if (mapping.Count == 0)
             {
                 throw new Exception("Mapping is empty");
