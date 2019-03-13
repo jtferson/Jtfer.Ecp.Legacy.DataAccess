@@ -135,7 +135,6 @@ namespace Jtfer.Ecp.Legacy.DataAccess
         }
     }
 
-
     public class DbRouterLegacy : DataProviderBaseLegacy
     {
         private DbConnectionBaseLegacy[] providers;
@@ -143,6 +142,11 @@ namespace Jtfer.Ecp.Legacy.DataAccess
 
         private DbConnectionBaseLegacy cachedProvider;
         private Type lastType;
+
+        internal void SetProviders(params DbConnectionBaseLegacy[] providers)
+        {
+            this.providers = providers;
+        }
 
         public override IEnumerable<TChild> AddRange<TChild>(IEnumerable<TChild> objs)
         {

@@ -12,13 +12,14 @@ namespace Jtfer.Ecp.Legacy.DataAccess
 
         protected override void AddContainers()
         {
-
+            AddContainer<DataMemoryProviderLegacy>();
+            var dbRouter = AddContainer<DbRouterLegacy>();
+            AddContainer<DataGatewayLegacy>();
+            var providers = DefineDbConnections();
+            dbRouter.SetProviders();
         }
 
-        public void DefineDbRouter()
-        {
-
-        }
+        public abstract IEnumerable<DbConnectionBaseLegacy> DefineDbConnections();
 
     }
 }

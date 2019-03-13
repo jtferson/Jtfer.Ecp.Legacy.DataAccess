@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Jtfer.Ecp.Legacy.DataAccess
 {
+    [EcpInject]
     public class DataGatewayLegacy : IContainer
     {
         private DataMemoryProviderLegacy memory;
