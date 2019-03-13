@@ -21,5 +21,9 @@ namespace Jtfer.Ecp.Legacy.DataAccess
 
         public abstract IEnumerable<DbConnectionBaseLegacy> DefineDbConnections();
 
+        protected override void AddOperations(Pipeline pipeline)
+        {
+        }
+
     }
 }
