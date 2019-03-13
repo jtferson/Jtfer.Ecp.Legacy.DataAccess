@@ -238,6 +238,13 @@ namespace Jtfer.Ecp.Legacy.DataAccess
                 mapping = providers.SelectMany(q => q.GetMappedTypes(), (q, x) => new { prov = q, type = x })
                     .ToDictionary(q => q.type, q => q.prov);
             }
+#if DEBUG
+            if (mapping.Count == 0)
+            {
+                throw new Exception("Mapping is empty");
+            }
+#endif
+
             if (lastType == type)
                 return cachedProvider;
             lastType = type;
