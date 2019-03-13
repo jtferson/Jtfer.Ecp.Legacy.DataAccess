@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="bin.meta" />
+    <None Remove="Jtfer.Ecp.Legacy.DataAccess.asmdef.meta" />
+    <None Remove="Jtfer.Ecp.Legacy.DataAccess.csproj.meta" />
+    <None Remove="obj.meta" />
+    <None Remove="package.json.meta" />
+    <None Remove="src.meta" />
+    <None Remove="src\DataAccessContextBaseLegacy.cs.meta" />
+    <None Remove="src\DataGatewayLegacy.cs.meta" />
+    <None Remove="src\DbConnectionBaseLegacy.cs.meta" />
+    <None Remove="src\DbContextLegacy.cs.meta" />
+    <None Remove="src\DbObjectLegacy.cs.meta" />
+    <None Remove="src\ProvidersLegacy.cs.meta" />
+    <None Remove="src\RepositoryBaseLegacy.cs.meta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jtfer.Ecp\Jtfer.Ecp.csproj" />
+  </ItemGroup>
+
+</Project>
