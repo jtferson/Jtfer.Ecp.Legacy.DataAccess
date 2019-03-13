@@ -5,12 +5,13 @@ using System.Text;
 
 namespace Jtfer.Ecp.Legacy.DataAccess
 {
+    [EcpInject]
     public abstract class RepositoryBase : IContainer
     {
         protected DataGatewayLegacy Gateway = null;
     }
 
-
+    [EcpInject]
     public abstract class RepositoryBase<T> : RepositoryBase
         where T : DbObjectLegacy, new()
     {
