@@ -241,6 +241,12 @@ namespace Jtfer.Ecp.Legacy.DataAccess
             if (lastType == type)
                 return cachedProvider;
             lastType = type;
+#if DEBUG
+            if (mapping.ContainsKey(lastType))
+            {
+                throw new Exception(string.Format("Mapping doesn't contain \"{0}\" type", lastType));
+            }
+#endif
             cachedProvider = mapping[lastType];
             return cachedProvider;
         }

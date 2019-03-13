@@ -13,7 +13,8 @@ namespace Jtfer.Ecp.Legacy.DataAccess
             provider.MapEntityToTable<T>();
         }
     }
-    public abstract class DbContextBaseLegacy<T> : IContainer
+    [EcpInject]
+    public abstract class DbContextBaseLegacy<T> : IInitContainer
         where T : DbConnectionBaseLegacy
     {
         protected T _ = null;
@@ -21,6 +22,10 @@ namespace Jtfer.Ecp.Legacy.DataAccess
         public void Initialize()
         {
             DefineDbContext();
+        }
+
+        public void Destroy()
+        {
         }
 
         protected abstract void DefineDbContext();
