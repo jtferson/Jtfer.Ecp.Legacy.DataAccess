@@ -1,0 +1,17 @@
+{
+  "name": "com.jtfer.ecp.legacy.dataaccess",
+  "author": "Jtferson",
+  "displayName": "ECP DataAccess Legacy",
+  "description": "Legacy data access to DB project with support primary key as 'int' type",
+  "unity": "2018.3",
+  "version": "2019.3.12",
+  "keywords": [
+    "ecp",
+    "pipeline"
+  ],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtferson/Jtfer.Ecp.Legacy.DataAccess"
+  }
+}
